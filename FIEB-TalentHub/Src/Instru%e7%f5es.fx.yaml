@@ -1,0 +1,94 @@
+Instruções As screen:
+    Fill: =RGBA(227, 234, 243, 1)
+    OnVisible: =Set(varShowMenu,true);Set(varShowMenu,false);
+
+    Título_4 As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =78
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Instrucoes_1 As htmlViewer:
+        DisplayMode: =DisplayMode.View
+        Height: =987
+        HtmlText: |-
+            ="Você, colaborador, que tem interesse em trabalhar em outras áreas na FIEB, agora pode se candidatar preenchendo esse formulário. </br>
+            
+            Acesse os itens no menu e preencha todas as informações necessárias a sua candidatura. </br>
+            
+            Descreva o máximo de detalhes para que suas informações atendam às futuras vagas. </br>
+             
+            Assim que a diretoria de seu interesse tiver oportunidades, entrará em contato."
+        PaddingLeft: =25
+        PaddingRight: =25
+        PaddingTop: =30
+        Size: =14
+        Width: =Parent.Width
+        Y: =148
+        ZIndex: =2
+
+    Label1 As label:
+        Align: =Align.Center
+        Color: =RGBA(50, 86, 160, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Size: =21
+        Text: ="INSTRUÇÕES"
+        Width: =Parent.Width
+        Y: =97
+        ZIndex: =3
+
+    Título_8 As label:
+        Align: =Align.Right
+        Color: =RGBA(186, 202, 226, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =100
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        Y: =1036
+        ZIndex: =4
+
+    MenuTalentHub_1 As MenuTalentHub:
+        ExpandirMenu: =varShowMenu
+        HamburgerMenuColor: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height
+        MenuItemsHub: =colMenuItems
+        SetMenuWidth: =225
+        Width: =MenuTalentHub_1.MenuWidth
+        Y: =47
+        ZIndex: =7
+
+    Group2_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =49
+        ZIndex: =12
+
+        Image22_7 As image:
+            Height: =97
+            Image: =Background_1
+            ImagePosition: =ImagePosition.Fill
+            Width: =Parent.Width
+            ZIndex: =5
+
+        Image24_7 As image:
+            Height: =60
+            Image: ='logo-fiebtech-branco_318x84'
+            Width: =Parent.Width
+            Y: =18
+            ZIndex: =6
+

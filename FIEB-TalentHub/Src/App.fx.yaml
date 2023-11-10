@@ -1,0 +1,51 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |-
+        =ClearCollect(
+            colTalentHub,
+            RegistroColaboradores
+        );
+        ClearCollect(
+            colMenuItems,
+            Table(
+                {
+                    Icone: Icon.DocumentWithContent,
+                    Label: "Instruções",
+                    Tela: Instruções,
+                    MenuID: 1
+                },
+                {
+                    Icone: Icon.Person,
+                    Label: "Dados Pessoais",
+                    Tela: DadosPessoaisNovo,
+                    MenuID: 2
+                },
+                {
+                    Icone: Icon.ListScrollWatchlist,
+                    Label: "Escolaridade",
+                    Tela: EscolaridadeNovo,
+                    MenuID: 3
+                },
+                {
+                    Icone: Icon.ComputerDesktop,
+                    Label: "Habilidades",
+                    Tela: HabilidadesNovo,
+                    MenuID: 4
+                },
+                {
+                    Icone: Icon.Journal,
+                    Label: "Área de interesse",
+                    Tela: ÁreaInteresseNovo,
+                    MenuID: 5
+                }
+            )
+        )
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

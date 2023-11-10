@@ -1,0 +1,95 @@
+{
+  "612fc7cc-11cf-4377-8cae-e3e769c6f3e2": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Fluxos lógicos",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "6962b01b-9ea3-4abb-88bf-62c5e6ca9981": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {
+          "value": "623317b3-561f-ed11-b83e-000d3a4f36ba"
+        },
+        "workflowName": {
+          "value": "831c51e7-e1d7-df5f-44ad-c908a897650a"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "6962b01b-9ea3-4abb-88bf-62c5e6ca9981"
+        },
+        "workflowEntityId": {
+          "value": "623317b3-561f-ed11-b83e-000d3a4f36ba"
+        },
+        "workflowName": {
+          "value": "831c51e7-e1d7-df5f-44ad-c908a897650a"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "AnexarSharepoint"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "6962b01b-9ea3-4abb-88bf-62c5e6ca9981"
+    },
+    "dependents": [],
+    "id": "612fc7cc-11cf-4377-8cae-e3e769c6f3e2"
+  },
+  "6b7db12a-4d0e-4c4c-b9f8-6a4ece898504": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://fiebedu.sharepoint.com/sites/SolicitacaoServicosDepartamentos": {
+        "dataSources": {
+          "Contatos_Colaboradores": {
+            "tableName": "206deaf0-fb32-4bf7-8589-3e305fd2a666"
+          },
+          "RegistroColaboradores": {
+            "tableName": "44c7bf6a-cace-4ed5-a8c2-f163a928d853"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Contatos_Colaboradores",
+      "RegistroColaboradores"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6b7db12a-4d0e-4c4c-b9f8-6a4ece898504"
+  },
+  "f9a7ed1c-e87f-40c6-8d44-7a196e749447": {
+    "appActions": [
+      "UserPhoto"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuários do Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuáriosdoOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "f9a7ed1c-e87f-40c6-8d44-7a196e749447"
+  }
+}

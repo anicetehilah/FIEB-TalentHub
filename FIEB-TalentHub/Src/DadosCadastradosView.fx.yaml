@@ -1,0 +1,733 @@
+DadosCadastradosView As screen:
+    Fill: =RGBA(227, 234, 243, 1)
+    OnVisible: =Set(varShowMenu,true);Set(varShowMenu,false);
+
+    Título_15 As label:
+        Align: =Align.Right
+        Color: =RGBA(186, 202, 226, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =100
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        Y: =1036
+        ZIndex: =1
+
+    Título_14 As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =78
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        ZIndex: =4
+
+    Label1_5 As label:
+        Align: =Align.Center
+        Color: =RGBA(50, 86, 160, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Size: =21
+        Text: ="CADASTRO ATUAL"
+        Width: =Parent.Width
+        X: =1
+        Y: =97
+        ZIndex: =5
+
+    FormViewer2 As formViewer:
+        DataSource: =RegistroColaboradores
+        Height: =989
+        Item: =LookUp(colTalentHub,Email=User().Email)
+        NumberOfColumns: =2
+        Width: =640
+        Y: =147
+        ZIndex: =8
+
+        DataAniversario_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DataAniversario"
+            Default: =ThisItem.DataAniversario
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"DataAniversario")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey51 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Data de Aniversário"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue51 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey51.Y + DataCardKey51.Height + 5
+                ZIndex: =2
+
+        CursoFaculdade_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CursoFaculdade"
+            Default: =ThisItem.CursoFaculdade
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"CursoFaculdade")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =1
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey52 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Curso Superior"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue52 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey52.Y + DataCardKey52.Height + 5
+                ZIndex: =2
+
+        Escolaridade_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Escolaridade"
+            Default: =ThisItem.Escolaridade
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Escolaridade")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey53 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue53 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey53.Y + DataCardKey53.Height + 5
+                ZIndex: =2
+
+        Instituicao_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Instituicao"
+            Default: =ThisItem.Instituicao
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Instituicao")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =1
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey54 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue54 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey54.Y + DataCardKey54.Height + 5
+                ZIndex: =2
+
+        DepartamentosInteresse_DataCard2 As typedDataCard.comboBoxMultiSelectViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Departamentos de Interesse"
+            Default: =ThisItem.DepartamentosInteresse
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"DepartamentosInteresse")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =118
+            Required: =false
+            Update: =DataCardValue55.SelectedItems
+            Width: =320
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey55 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Depts. de Interesse"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue55 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =80
+                Items: =Choices([@RegistroColaboradores].DepartamentosInteresse)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(RegistroColaboradores.DepartamentosInteresse,DataCardValue55.SearchText)
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey55.Y + DataCardKey55.Height + 5
+                ZIndex: =2
+
+            ErrorMessage9 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue55.Y + DataCardValue55.Height
+                ZIndex: =3
+
+            StarVisible9 As label:
+                Align: =Align.Center
+                Height: =DataCardKey55.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey55.Y
+                ZIndex: =4
+
+        DescHabilidades_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DescHabilidades"
+            Default: =ThisItem.DescHabilidades
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"DescHabilidades")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =1
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey56 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Descrição habilidades"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue56 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey56.Y + DataCardKey56.Height + 5
+                ZIndex: =2
+
+        DescProjetos_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DescProjetos"
+            Default: =ThisItem.DescProjetos
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"DescProjetos")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =757
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey57 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Projetos realizados"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue57 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey57.Y + DataCardKey57.Height + 5
+                ZIndex: =2
+
+        NumeroMatricula_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NumeroMarticula"
+            Default: =ThisItem.NumeroMatricula
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"NumeroMarticula")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey43 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Matrícula"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue43 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey43.Y + DataCardKey43.Height + 5
+                ZIndex: =2
+
+        NomeColaborador_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.NomeColaborador
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =1
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey44 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Nome Colaborador"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue44 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey44.Y + DataCardKey44.Height + 5
+                ZIndex: =2
+
+        Email_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Email"
+            Default: =ThisItem.Email
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Email")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =0
+            Y: =1
+            ZIndex: =9
+
+            DataCardKey45 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue45 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey45.Y + DataCardKey45.Height + 5
+                ZIndex: =2
+
+        UnidadeTrabalho_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="UnidadeTrabalho"
+            Default: =ThisItem.UnidadeTrabalho
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"UnidadeTrabalho")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =1
+            Y: =1
+            ZIndex: =9
+
+            DataCardKey46 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Unidade"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue46 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey46.Y + DataCardKey46.Height + 5
+                ZIndex: =2
+
+        Cargo_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Cargo"
+            Default: =ThisItem.Cargo
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Cargo")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =0
+            Y: =2
+            ZIndex: =9
+
+            DataCardKey47 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue47 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey47.Y + DataCardKey47.Height + 5
+                ZIndex: =2
+
+        Departamento_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Departamento"
+            Default: =ThisItem.Departamento
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Departamento")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =1
+            Y: =2
+            ZIndex: =9
+
+            DataCardKey48 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue48 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey48.Y + DataCardKey48.Height + 5
+                ZIndex: =2
+
+        TelefoneComercial_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TelefoneComercial"
+            Default: =ThisItem.TelefoneComercial
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"TelefoneComercial")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =0
+            Y: =3
+            ZIndex: =9
+
+            DataCardKey49 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: ="Telefone"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue49 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey49.Y + DataCardKey49.Height + 5
+                ZIndex: =2
+
+        Ramal_DataCard5 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Ramal"
+            Default: =ThisItem.Ramal
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Ramal")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =320
+            X: =1
+            Y: =3
+            ZIndex: =9
+
+            DataCardKey50 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                PaddingBottom: =0
+                PaddingLeft: =0
+                Size: =14
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue50 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey50.Y + DataCardKey50.Height + 5
+                ZIndex: =2
+
+    IconFechar As icon.CancelBadge:
+        AccessibleLabel: ="Fechar"
+        Color: =RGBA(241, 244, 249, 1)
+        Height: =40
+        Icon: =Icon.Cancel
+        OnSelect: =Navigate(Início,ScreenTransition.CoverRight)
+        Tooltip: ="Fechar"
+        Width: =40
+        X: =586
+        Y: =47
+        ZIndex: =9
+
+    IconEditar As icon.Edit:
+        AccessibleLabel: ="Editar"
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =40
+        Icon: =Icon.Edit
+        OnSelect: |-
+            =EditForm(Form3);
+            Navigate(
+                DadosCadastradosEdit,
+                ScreenTransition.Cover
+            )
+        Tooltip: ="Editar"
+        Width: =40
+        X: =513
+        Y: =47
+        ZIndex: =10
+
+    Group2_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =49
+        ZIndex: =13
+
+        Image22_8 As image:
+            Height: =97
+            Image: =Background_1
+            ImagePosition: =ImagePosition.Fill
+            Width: =Parent.Width
+            ZIndex: =6
+
+        Image24_8 As image:
+            Height: =60
+            Image: ='logo-fiebtech-branco_318x84'
+            Width: =Parent.Width
+            Y: =18
+            ZIndex: =7
+

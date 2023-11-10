@@ -1,0 +1,462 @@
+EscolaridadeNovo As screen:
+    Fill: =RGBA(227, 234, 243, 1)
+    OnVisible: =Set(varShowMenu,true);Set(varShowMenu,false);
+
+    Título_5 As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =78
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Label1_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(50, 86, 160, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Size: =21
+        Text: ="ESCOLARIDADE"
+        Width: =Parent.Width
+        X: =1
+        Y: =98
+        ZIndex: =3
+
+    Form2 As form:
+        DataSource: =RegistroColaboradores
+        DefaultMode: =FormMode.New
+        Height: =968
+        Width: =Parent.Width
+        Y: =168
+        ZIndex: =4
+
+        CursoFaculdade_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CursoFaculdade"
+            Default: =ThisItem.CursoFaculdade
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"CursoFaculdade")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@RegistroColaboradores], DataSourceInfo.MaxLength, "CursoFaculdade")
+            Required: =false
+            Update: =DataCardValue17.Text
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey17 As label:
+                AutoHeight: =true
+                Height: =48
+                Text: ="Digite o nome do curso de sua última formação"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue17 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                ZIndex: =2
+
+            ErrorMessage17 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue17.Y + DataCardValue17.Height
+                ZIndex: =3
+
+            StarVisible17 As label:
+                Align: =Align.Center
+                Height: =DataCardKey17.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey17.Y
+                ZIndex: =4
+
+        Escolaridade_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Escolaridade"
+            Default: =ThisItem.Escolaridade
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Escolaridade")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =149
+            MaxLength: =DataSourceInfo([@RegistroColaboradores], DataSourceInfo.MaxLength, "Escolaridade")
+            Required: =false
+            Update: =DataCardValue18.Text
+            Width: =Parent.Width
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            ListaCursos As label:
+                AutoHeight: =true
+                Height: =48
+                Text: ="Digite a Formação"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =16
+                ZIndex: =1
+
+            DataCardKey18 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =10
+                Text: ="Ensino Médio/Técnico/Superior/Pós-Graduação/Mestrado/Doutorado"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =50
+                ZIndex: =2
+
+            DataCardValue18 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =84
+                ZIndex: =3
+
+            ErrorMessage18 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =134
+                ZIndex: =4
+
+            StarVisible18 As label:
+                Align: =Align.Center
+                Height: =DataCardKey18.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey18.Y
+                ZIndex: =5
+
+        AnoConclusao_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="AnoConclusao"
+            Default: =ThisItem.AnoConclusao
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"AnoConclusao")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@RegistroColaboradores], DataSourceInfo.MaxLength, "AnoConclusao")
+            Required: =false
+            Update: =DataCardValue19.Text
+            Width: =Parent.Width
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey19 As label:
+                AutoHeight: =true
+                Height: =48
+                Text: ="Digite no campo abaixo o ano de início e de conclusão da formação"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue19 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                ZIndex: =2
+
+            ErrorMessage19 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue19.Y + DataCardValue19.Height
+                ZIndex: =3
+
+            StarVisible19 As label:
+                Align: =Align.Center
+                Height: =DataCardKey19.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey19.Y
+                ZIndex: =4
+
+        Instituicao_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Instituicao"
+            Default: =ThisItem.Instituicao
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"Instituicao")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@RegistroColaboradores], DataSourceInfo.MaxLength, "Instituicao")
+            Required: =false
+            Update: =DataCardValue20.Text
+            Width: =Parent.Width
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey20 As label:
+                AutoHeight: =true
+                Height: =48
+                Text: ="Digite o nome da instituição de conclusão da última formação"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue20 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                ZIndex: =2
+
+            ErrorMessage20 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue20.Y + DataCardValue20.Height
+                ZIndex: =3
+
+            StarVisible20 As label:
+                Align: =Align.Center
+                Height: =DataCardKey20.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey20.Y
+                ZIndex: =4
+
+        SituacaoEscolaridade_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SituacaoEscolaridade"
+            Default: =ThisItem.SituacaoEscolaridade
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"SituacaoEscolaridade")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =128
+            MaxLength: =DataSourceInfo([@RegistroColaboradores], DataSourceInfo.MaxLength, "SituacaoEscolaridade")
+            Required: =false
+            Update: =DataCardValue21.Text
+            Width: =Parent.Width
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey21 As label:
+                AutoHeight: =true
+                Height: =48
+                Text: ="Digite a situação de sua formação"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue21 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: |
+                    =
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =72
+                ZIndex: =2
+
+            ErrorMessage21 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =122
+                ZIndex: =3
+
+            StarVisible21 As label:
+                Align: =Align.Center
+                Height: =DataCardKey21.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey21.Y
+                ZIndex: =4
+
+            DataCardKey21_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =10
+                Text: ="Cursando / Completo / Incompleto"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =44
+                ZIndex: =5
+
+    Título_10 As label:
+        Align: =Align.Right
+        Color: =RGBA(186, 202, 226, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =100
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        Y: =1036
+        ZIndex: =11
+
+    MenuTalentHub_3 As MenuTalentHub:
+        ExpandirMenu: =varShowMenu
+        HamburgerMenuColor: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height
+        MenuItemsHub: =colMenuItems
+        SetMenuWidth: =225
+        Width: =MenuTalentHub_3.MenuWidth
+        Y: =47
+        ZIndex: =14
+
+    Group2_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =49
+        ZIndex: =14
+
+        Image22_4 As image:
+            Height: =97
+            Image: =Background_1
+            ImagePosition: =ImagePosition.Fill
+            Width: =Parent.Width
+            ZIndex: =12
+
+        Image24_4 As image:
+            Height: =60
+            Image: ='logo-fiebtech-branco_318x84'
+            Width: =Parent.Width
+            Y: =18
+            ZIndex: =13
+

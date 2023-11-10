@@ -1,0 +1,266 @@
+ÁreaInteresseNovo As screen:
+    BackgroundImage: =
+    Fill: =RGBA(227, 234, 243, 1)
+    OnVisible: =Set(varShowMenu,true);Set(varShowMenu,false);
+
+    Título_7 As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =78
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(50, 86, 160, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Size: =21
+        Text: ="ÁREA DE INTERESSE"
+        Width: =Parent.Width
+        X: =1
+        Y: =97
+        ZIndex: =2
+
+    Form2_2 As form:
+        AcceptsFocus: =false
+        DataSource: =RegistroColaboradores
+        DefaultMode: =FormMode.New
+        Height: =968
+        Width: =Parent.Width
+        Y: =168
+        ZIndex: =3
+
+        DepartamentosInteresse_DataCard1 As typedDataCard.comboBoxMultiSelectEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DepartamentosInteresse"
+            Default: =ThisItem.DepartamentosInteresse
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"DepartamentosInteresse")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue25.SelectedItems
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey25 As label:
+                AutoHeight: =true
+                Height: =48
+                Text: ="Selecione os departamentos que tem interesse em atuar"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue25 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Choices([@RegistroColaboradores].DepartamentosInteresse)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(RegistroColaboradores.DepartamentosInteresse,DataCardValue25.SearchText)
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey25.Y + DataCardKey25.Height + 5
+                ZIndex: =2
+
+            ErrorMessage25 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue25.Y + DataCardValue25.Height
+                ZIndex: =3
+
+            StarVisible25 As label:
+                Align: =Align.Center
+                Height: =DataCardKey25.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey25.Y
+                ZIndex: =4
+
+        Anexos_DataCard1 As typedDataCard.attachmentsEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Anexos
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@RegistroColaboradores],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue26.Attachments
+            Width: =Parent.Width
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey26 As label:
+                AutoHeight: =true
+                Height: =48
+                Text: ="Se desejar anexe o currículo aqui"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue26 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Height: =120
+                IsInDataCard: =true
+                Items: =
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey26.Y + DataCardKey26.Height + 5
+                ZIndex: =2
+
+            ErrorMessage26 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue26.Y + DataCardValue26.Height
+                ZIndex: =3
+
+            StarVisible26 As label:
+                Align: =Align.Center
+                Height: =DataCardKey26.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey26.Y
+                ZIndex: =4
+
+    btnSalvar As button:
+        Height: =70
+        OnSelect: |-
+            =Patch(
+                RegistroColaboradores,
+                Defaults(RegistroColaboradores),
+                {
+                    NomeColaborador: DataCardValue2.Text,
+                    Email: DataCardValue3.Text,
+                    NumeroMatricula: DataCardValue1.Text,
+                    UnidadeTrabalho: DataCardValue4.Text,
+                    Cargo: DataCardValue5.Text,
+                    Departamento: DataCardValue6.Text,
+                    TelefoneComercial: DataCardValue7.Text,
+                    Ramal: DataCardValue8.Text,
+                    DataAniversario: DataCardValue22.Text,
+                    CursoFaculdade: DataCardValue17.Text,
+                    Instituicao: DataCardValue20.Text,
+                    Escolaridade: DataCardValue18.Text,
+                    SituacaoEscolaridade: DataCardValue21.Text,
+                    AnoConclusao: DataCardValue19.Text,
+                    DescHabilidades: DataCardValue23.Text,
+                    DescProjetos: DataCardValue24.Text
+                },
+                Form2_2.Updates
+            );
+            Notify(
+                "Dados cadastrados com sucesso!",
+                NotificationType.Success
+            );
+            ResetForm(Form1);
+            ResetForm(Form2);
+            ResetForm(Form2_1);
+            ResetForm(Form2_2);
+            Navigate(
+                Sucesso,
+                ScreenTransition.UnCover
+            )
+        Size: =21
+        Text: ="Salvar Cadastro"
+        Width: =280
+        X: =180
+        Y: =493
+        ZIndex: =4
+
+    Título_12 As label:
+        Align: =Align.Right
+        Color: =RGBA(186, 202, 226, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =100
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        Y: =1036
+        ZIndex: =7
+
+    MenuTalentHub_5 As MenuTalentHub:
+        ExpandirMenu: =varShowMenu
+        HamburgerMenuColor: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height
+        MenuItemsHub: =colMenuItems
+        SetMenuWidth: =225
+        Width: =MenuTalentHub_5.MenuWidth
+        Y: =47
+        ZIndex: =8
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Image22_3 As image:
+            Height: =97
+            Image: =Background_1
+            ImagePosition: =ImagePosition.Fill
+            Width: =Parent.Width
+            ZIndex: =5
+
+        Image24_3 As image:
+            Height: =60
+            Image: ='logo-fiebtech-branco_318x84'
+            Width: =Parent.Width
+            Y: =18
+            ZIndex: =6
+

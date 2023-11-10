@@ -1,0 +1,130 @@
+Início As screen:
+    Fill: |-
+        =RGBA(
+            227,
+            234,
+            243,
+            1
+        )
+
+    ContPopUp As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(227, 234, 243, 1)
+        Height: =1136
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =ViewPopUp
+        Width: =640
+        ZIndex: =4
+
+        ContInterna As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =225
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            X: =75
+            Y: =351
+            ZIndex: =1
+
+            btnPopUp As button:
+                Color: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(186, 202, 226, 1)
+                Height: =60
+                OnSelect: |-
+                    =UpdateContext({ViewPopUp: false});
+                    Navigate(
+                        DadosCadastradosView,
+                        ScreenTransition.UnCover
+                    )
+                Size: =14
+                Text: ="OK"
+                Width: =140
+                X: =180
+                Y: =105
+                ZIndex: =1
+
+            lbCtx As label:
+                Align: =Align.Center
+                Color: =RGBA(241, 244, 249, 1)
+                Height: =70
+                Size: =18
+                Text: ="Cadastro já existe"
+                Width: =500
+                Y: =35
+                ZIndex: =2
+
+        Título_13 As label:
+            Align: =Align.Right
+            Color: =RGBA(186, 202, 226, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Lato Black'
+            Height: =100
+            Italic: =true
+            PaddingLeft: =25
+            PaddingRight: =25
+            Size: =40
+            Text: ="Talent Hub"
+            Width: =Parent.Width
+            Y: =1036
+            ZIndex: =2
+
+    btnInicio As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =4
+
+        Button2 As button:
+            Color: =RGBA(186, 202, 226, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =1136
+            OnSelect: |-
+                =If(
+                    CountRows(
+                        Filter(
+                            colTalentHub,
+                            Email = User().Email
+                        )
+                    ) >= 1,
+                    UpdateContext({ViewPopUp: true}),
+                    Navigate(
+                        Instruções,
+                        ScreenTransition.UnCover
+                    )
+                )
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =40
+            Text: =""
+            Width: =640
+            ZIndex: =1
+
+        Image2 As image:
+            Height: =93
+            Image: ='logo-fiebtech-branco_318x84'
+            Width: =320
+            X: =160
+            Y: =370
+            ZIndex: =2
+
+        Título As label:
+            Align: =Align.Center
+            Color: =RGBA(186, 202, 226, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Lato Black'
+            Height: =100
+            Italic: =true
+            PaddingLeft: =25
+            PaddingRight: =25
+            Size: =40
+            Text: ="Talent Hub"
+            Width: =Parent.Width
+            Y: =476
+            ZIndex: =3
+
