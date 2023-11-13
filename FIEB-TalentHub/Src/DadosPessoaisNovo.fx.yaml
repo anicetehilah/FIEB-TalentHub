@@ -711,7 +711,7 @@ DadosPessoaisNovo As screen:
         HamburgerMenuColor: =RGBA(255, 255, 255, 1)
         Height: =Parent.Height
         MenuItemsHub: =colMenuItems
-        SetMenuWidth: =225
+        SetMenuWidth: =640
         Width: =MenuTalentHub_2.MenuWidth
         Y: =47
         ZIndex: =8

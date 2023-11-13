@@ -238,10 +238,25 @@
         HamburgerMenuColor: =RGBA(255, 255, 255, 1)
         Height: =Parent.Height
         MenuItemsHub: =colMenuItems
-        SetMenuWidth: =225
+        SetMenuWidth: =640
         Width: =MenuTalentHub_5.MenuWidth
         Y: =47
         ZIndex: =8
+
+    Título_22 As label:
+        Align: =Align.Right
+        Color: =RGBA(186, 202, 226, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        Height: =100
+        Italic: =true
+        PaddingLeft: =25
+        PaddingRight: =25
+        Size: =40
+        Text: ="Talent Hub"
+        Width: =Parent.Width
+        Y: =1036
+        ZIndex: =9
 
     Group2 As group:
         Height: =5

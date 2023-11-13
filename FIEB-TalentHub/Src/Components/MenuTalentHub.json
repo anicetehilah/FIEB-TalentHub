@@ -106,7 +106,7 @@
         "Name": "IconHamburger",
         "Parent": "MenuTalentHub",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 293,
+        "PublishOrderIndex": 297,
         "Rules": [
           {
             "Category": "Design",
@@ -315,7 +315,7 @@
             "Name": "galleryTemplate2",
             "Parent": "gallMenu",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 295,
+            "PublishOrderIndex": 299,
             "Rules": [
               {
                 "Category": "Design",
@@ -395,7 +395,7 @@
             "Name": "rectShape",
             "Parent": "gallMenu",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 296,
+            "PublishOrderIndex": 300,
             "Rules": [
               {
                 "Category": "Design",
@@ -641,7 +641,7 @@
             "Name": "btnClick",
             "Parent": "gallMenu",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 297,
+            "PublishOrderIndex": 301,
             "Rules": [
               {
                 "Category": "Data",
@@ -978,7 +978,7 @@
             "Name": "iconMenu",
             "Parent": "gallMenu",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 298,
+            "PublishOrderIndex": 302,
             "Rules": [
               {
                 "Category": "Design",
@@ -1258,7 +1258,7 @@
             "Name": "lblMenu",
             "Parent": "gallMenu",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 299,
+            "PublishOrderIndex": 303,
             "Rules": [
               {
                 "Category": "Data",
@@ -1600,7 +1600,7 @@
         "Name": "gallMenu",
         "Parent": "MenuTalentHub",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 294,
+        "PublishOrderIndex": 298,
         "Rules": [
           {
             "Category": "Data",
@@ -1849,7 +1849,7 @@
         "NameMapSourceSchema": "?"
       }
     ],
-    "LastModifiedTimestamp": "638352373239697469",
+    "LastModifiedTimestamp": "638355001812499196",
     "Name": "MenuTalentHub",
     "Rules": [
       {
@@ -2021,7 +2021,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638352373239697469",
+  "LastModifiedTimestamp": "638355001812499196",
   "Name": "67d433a5e93c4b97a1ffdaec274955b5",
   "OverridableProperties": {},
   "Version": "638333589376508561"
